@@ -21,30 +21,30 @@ Az űrlapon lehet szerkeszteni az esemény részleteit.
 1. Hozz létre egy gombot minden eseményhez a táblázat adott sorában, az utolsó 
 cellában. Erre a gombra kattintva navigáljon el az alkalmazás az `event/:id` 
 oldalra, ahol az `:id` az adott esemény id-je.  
-(A listát az EventsListComponent-ben találod.)
+(A listát az EventsListComponent-ben találod.) 
 
-1. Hozd létre az EventEditor komponenst a page mappában:  
+2. Hozd létre az EventEditor komponenst a page mappában:  
  `ng g c page/event-editor`.  
 Injektáld be a constructor-ben az EventService és az ActivatedRoute szolgáltatásokat.
 
-1. Iratkozz fel az ActivatedRoute params-ra, és ha változik a params, 
+3. Iratkozz fel az ActivatedRoute params-ra, és ha változik a params, 
 akkor olvasd ki belőle az id változót, és ez alapján kérd le az EventService-ből 
 az adott eseményt.  
 Segítségképpen elkészítettem erre a célra a get metódust, amely egy 
 `Observable<Event>`-et ad vissza.  
 [Segítség](https://github.com/Training360/str-angular-004/blob/3a165b952b7ee6a0ca091b8dd80a57ad0ffc1c01/str-angular-routing-and-form/src/app/page/product-editor/product-editor.component.ts#L22)
 
-1. Az EventEditor komponensben hozz létre egy űrlapot. Az űrlap jelenítse meg 
+4. Az EventEditor komponensben hozz létre egy űrlapot. Az űrlap jelenítse meg 
 szerkeszthető formában az Event összes tulajdonságát.  
 Minden adat kitöltése legyen kötelező, az event.name-nek pedig legalább 
 8 karakter hosszúnak kell lennie.  
 [Segítség](https://github.com/Training360/str-angular-004/blob/3a165b952b7ee6a0ca091b8dd80a57ad0ffc1c01/str-angular-routing-and-form/src/app/page/product-editor/product-editor.component.html#L6)
 
-1. Ha valamelyik adat nem megfelelően van megadva, jelenjen meg hibaüzenet.  
+5. Ha valamelyik adat nem megfelelően van megadva, jelenjen meg hibaüzenet.  
 Fontos: a hibaüzenet osztálya `error-message` legyen!
 [Segítség](https://github.com/Training360/str-angular-004/blob/3a165b952b7ee6a0ca091b8dd80a57ad0ffc1c01/str-angular-routing-and-form/src/app/page/product-editor/product-editor.component.html#L8)
 
-1. Ha az űrlap nem valid, ne lehessen elküldeni, ne működjön a mentés gomb.  
+6. Ha az űrlap nem valid, ne lehessen elküldeni, ne működjön a mentés gomb.  
 Fontos: a tesztek miatt az űrlapon csak egy darab gomb legyen.
 [Segítség](https://github.com/Training360/str-angular-004/blob/3a165b952b7ee6a0ca091b8dd80a57ad0ffc1c01/str-angular-routing-and-form/src/app/page/product-editor/product-editor.component.html#L22)
 
